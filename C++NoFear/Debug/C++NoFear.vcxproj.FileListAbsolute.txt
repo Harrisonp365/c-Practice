@@ -1,0 +1,2 @@
+C:\Dev\C++Practice\C++NoFear\Debug\C++NoFear.exe
+C:\Dev\C++Practice\C++NoFear\Debug\C++NoFear.pdb

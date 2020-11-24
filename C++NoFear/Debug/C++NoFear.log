@@ -1,0 +1,3 @@
+﻿  C++NoFear.cpp
+C:\Dev\C++Practice\C++NoFear\C++NoFear.cpp(21,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  C++NoFear.vcxproj -> C:\Dev\C++Practice\C++NoFear\Debug\C++NoFear.exe
