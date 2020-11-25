@@ -1,0 +1,2 @@
+C:\Dev\C++Practice\basicStorage\Debug\basicStorage.exe
+C:\Dev\C++Practice\basicStorage\Debug\basicStorage.pdb
