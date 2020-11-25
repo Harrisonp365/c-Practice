@@ -29,7 +29,7 @@ int main()
 
 //--------------------------------------------------------
 //Random Access Write to binary file
-#include <iostream>
+/*#include <iostream>
 #include <fstream>
 using namespace std;
 
@@ -68,6 +68,61 @@ int main()
     fbin.write(name, sizeof(name) - 1);
     fbin.write((char*)(&age), sizeof(int));
     fbin.close();
+    return 0;
+}
+
+#define COL_WIDTH 80 
+
+int getInt(int defaultValue)
+{
+    char s[COL_WIDTH + 1];
+    cin.getline(s, COL_WIDTH);
+
+    if (strlen(s) == 0)
+        return defaultValue;
+    return atoi(s);
+} */
+
+//--------------------------------------------------------
+//Random Access Write to binary file
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int getInt(int defaultValue);
+
+int main()
+{
+    char filename[_MAX_PATH + 1];
+    int n = 0;
+    char name[20];
+    int age = 0;
+    int recsize = sizeof(name) + sizeof(int);
+
+    std::cout << "Enter a file name and press enter: " << std::endl;
+    cin.getline(filename, _MAX_PATH);
+
+    //Open File for binary read/write.
+    fstream fbin(filename, ios::binary | ios::in);
+    if (!fbin)
+    {
+        cout << "Could not open " << filename << endl;
+        return -1;
+    }
+
+    //Get record number to write to
+    cout << "Enter file record number: ";
+    n = getInt(0);
+    fbin.seekp(n * recsize);
+
+    //Read data from file
+    fbin.read(name, sizeof(name) - 1);
+    fbin.read((char*)(&age), sizeof(int));
+
+    cout << "The name is : " << name << endl;
+    cout << "The age is: " << age << endl;
+    fbin.close();
+
     return 0;
 }
 
