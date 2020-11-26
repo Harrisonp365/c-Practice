@@ -1,0 +1,2 @@
+C:\Dev\C++Practice\longlongPractice\Debug\longlongPractice.exe
+C:\Dev\C++Practice\longlongPractice\Debug\longlongPractice.pdb
