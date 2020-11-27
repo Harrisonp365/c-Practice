@@ -1,3 +1,3 @@
 ﻿  RockPaperScissors.cpp
-C:\Dev\C++Practice\RockPaperScissors\RockPaperScissors.cpp(21,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Dev\C++Practice\RockPaperScissors\RockPaperScissors.cpp(28,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   RockPaperScissors.vcxproj -> C:\Dev\C++Practice\RockPaperScissors\Debug\RockPaperScissors.exe

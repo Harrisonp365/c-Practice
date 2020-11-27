@@ -16,8 +16,15 @@ void decideWinner();
 string getMessage(Choice winner);
 int rand0toN1(int n);
 
+Choice favourite;
+Choice secondFav;
+Choice thirdFav;
+void setFavourites();
+
 int main(int argc, char *argv[])
 {
+    setFavourites();
+
     srand(time(NULL));
     string input_str;
     int c;
@@ -60,12 +67,32 @@ int main(int argc, char *argv[])
     return EXIT_SUCCESS;
 }
 
-Choice getComputerChoice()
+void setFavourites()
 {
     int n = rand0toN1(3);
-    if (n == 0) return Choice::rock;
-    if (n == 1) return Choice::paper;
-    return Choice::scissors;
+    favourite = static_cast<Choice>(n);
+    int m = rand0toN1(2); 
+
+    if (m == 0)
+    {
+        secondFav = static_cast<Choice>((n + 1) % 3);
+        thirdFav = static_cast<Choice>((n + 2) % 3);
+    }
+    else
+    {
+        secondFav = static_cast<Choice>((n + 2) % 3);
+        thirdFav = static_cast<Choice>((n + 1) % 3);
+    }
+}
+
+Choice getComputerChoice()
+{
+    int n = rand0toN1(20);
+    if (n >= 0 && n <= 10)
+        return favourite;
+    if (n >= 11 && n <= 16)
+        return secondFav;
+    return thirdFav;
 }
 
 void decideWinner()
