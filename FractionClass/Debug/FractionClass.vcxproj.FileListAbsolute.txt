@@ -1,0 +1,2 @@
+C:\Dev\C++Practice\FractionClass\Debug\FractionClass.exe
+C:\Dev\C++Practice\FractionClass\Debug\FractionClass.pdb

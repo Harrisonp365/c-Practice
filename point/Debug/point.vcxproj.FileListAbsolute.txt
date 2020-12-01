@@ -1,0 +1,2 @@
+C:\Dev\C++Practice\point\Debug\point.exe
+C:\Dev\C++Practice\point\Debug\point.pdb

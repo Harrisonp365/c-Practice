@@ -1,15 +1,22 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
-Class Fraction{
+class Fraction{
 private:
 	int num, den; //numerator and denominator
 
 public:
+	Fraction() { set(0, 1); }
+	Fraction(int n, int d) { set(n, d); }
+	Fraction(const Fraction& src);
+
 	void set(int n, int d) { num = n; den = d; normalize(); }
-	int getNum() { return num; }
-	int getDen() { return den; }
+	int getNum() const { return num; }
+	int getDen() const { return den; }
+	Fraction add(const Fraction& other);
+	Fraction mult(const Fraction& other);
+	Fraction operator+(const Fraction& other) { return add(other); }
+	Fraction operator*(const Fraction& other) { return mult(other); }
 
 private:
 	void normalize();
@@ -21,29 +28,22 @@ private:
 
 int main()
 {
-	int a, b;
-	string str;
-	Fraction fract;
+	Fraction f1(1, 2);
+	Fraction f2(1, 3);
+	Fraction f3 = f1 + f2;
 
-	while (true) {
-		cout << "Enter a numerator: ";
-		cin >> a;
-		cout << "Enter a denominator: ";
-		cin >> b;
-		fract.set(a, b);
+	cout << "1/2 + 1/3 = ";
+	cout << f3.getNum() << "/";
+	cout << f3.getDen() << ".";
 
-		cout << "Numerator is : " << fract.getNum() << endl;
-		cout << "Denominator is : " << fract.getDen() << endl;
-
-		cout << "Do it again? (Y/N) ";
-		cin >> str;
-
-		if (!(str[0] == 'Y' || str[0] == 'N'))
-			break;
-	}
 	return 0;
 }
 
+
+Fraction::Fraction(Fraction const& src) {
+	num = src.num;
+	den = src.den;
+}
 
 void Fraction::normalize() {
 	//Handle case involving 0
@@ -76,4 +76,16 @@ int Fraction::gcf(int a, int b) {
 int Fraction::lcm(int a, int b) {
 	int n = gcf(a, b);
 	return a / n * b;
+}
+
+Fraction Fraction::add(const Fraction& other) {
+	int lcd = lcm(den, other.den);
+	int quot1 = lcd / other.den;
+	int quot2 = lcd / den;
+	
+	return Fraction(num * quot1 + other.num * quot2, lcd);
+}
+
+Fraction Fraction::mult(const Fraction& other) {
+	return Fraction(num * other.num, den * other.den);
 }
