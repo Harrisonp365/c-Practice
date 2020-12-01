@@ -17,6 +17,8 @@ public:
 	Fraction mult(const Fraction& other);
 	Fraction operator+(const Fraction& other) { return add(other); }
 	Fraction operator*(const Fraction& other) { return mult(other); }
+	bool operator==(const Fraction& other);
+	friend ostream& operator<<(ostream& os, Fraction& fr);
 
 private:
 	void normalize();
@@ -88,4 +90,13 @@ Fraction Fraction::add(const Fraction& other) {
 
 Fraction Fraction::mult(const Fraction& other) {
 	return Fraction(num * other.num, den * other.den);
+}
+
+bool Fraction::operator*(const Fraction& other) {
+	return(num == other.num && den == other.den);
+}
+
+ostream& operator<<(ostream& os, Fraction& fr) {
+	os << fr.num << "/" << fr.den;
+	return os;
 }
