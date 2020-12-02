@@ -1,0 +1,21 @@
+﻿  DynamicMemory.cpp
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(30,13): error C2679: binary '=': no operator found which takes a right-hand operand of type 'const char [3]' (or there is no acceptable conversion)
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(16,13): message : could be 'String &String::operator =(char *)'
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(15,13): message : or       'String &String::operator =(const String &)'
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(30,13): message : while trying to match the argument list '(String, const char [3])'
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(31,18): error C2679: binary '=': no operator found which takes a right-hand operand of type 'const char [8]' (or there is no acceptable conversion)
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(16,13): message : could be 'String &String::operator =(char *)'
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(15,13): message : or       'String &String::operator =(const String &)'
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(31,18): message : while trying to match the argument list '(String, const char [8])'
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(32,16): error C2679: binary '=': no operator found which takes a right-hand operand of type 'const char [6]' (or there is no acceptable conversion)
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(16,13): message : could be 'String &String::operator =(char *)'
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(15,13): message : or       'String &String::operator =(const String &)'
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(32,16): message : while trying to match the argument list '(String, const char [6])'
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(33,36): error C2679: binary '+': no operator found which takes a right-hand operand of type 'const char [6]' (or there is no acceptable conversion)
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(17,12): message : could be 'String String::operator +(char *)'
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(33,36): message : while trying to match the argument list '(String, const char [6])'
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(47,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(53,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(74,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(81,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Dev\C++Practice\DynamicMemory\DynamicMemory.cpp(82,5): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
