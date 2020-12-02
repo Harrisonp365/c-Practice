@@ -1,0 +1,13 @@
+﻿  LinkedLists.cpp
+C:\Dev\C++Practice\LinkedLists\LinkedLists.cpp(29,34): error C2679: binary '=': no operator found which takes a right-hand operand of type 'Node *' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\memory(1183,17): message : could be 'std::shared_ptr<Node> &std::shared_ptr<Node>::operator =(std::shared_ptr<Node> &&) noexcept'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\memory(1172,17): message : or       'std::shared_ptr<Node> &std::shared_ptr<Node>::operator =(const std::shared_ptr<Node> &) noexcept'
+C:\Dev\C++Practice\LinkedLists\LinkedLists.cpp(29,34): message : while trying to match the argument list '(std::shared_ptr<Node>, Node *)'
+C:\Dev\C++Practice\LinkedLists\LinkedLists.cpp(37,38): error C2440: '=': cannot convert from 'std::shared_ptr<Node>' to 'Node *'
+C:\Dev\C++Practice\LinkedLists\LinkedLists.cpp(37,32): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Dev\C++Practice\LinkedLists\LinkedLists.cpp(40,36): error C2679: binary '=': no operator found which takes a right-hand operand of type 'Node *' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\memory(1183,17): message : could be 'std::shared_ptr<Node> &std::shared_ptr<Node>::operator =(std::shared_ptr<Node> &&) noexcept'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\memory(1172,17): message : or       'std::shared_ptr<Node> &std::shared_ptr<Node>::operator =(const std::shared_ptr<Node> &) noexcept'
+C:\Dev\C++Practice\LinkedLists\LinkedLists.cpp(40,36): message : while trying to match the argument list '(std::shared_ptr<Node>, Node *)'
+C:\Dev\C++Practice\LinkedLists\LinkedLists.cpp(48,30): error C2440: '=': cannot convert from 'std::shared_ptr<Node>' to 'Node *'
+C:\Dev\C++Practice\LinkedLists\LinkedLists.cpp(48,24): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
