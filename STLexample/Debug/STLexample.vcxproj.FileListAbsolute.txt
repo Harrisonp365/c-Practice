@@ -1,0 +1,2 @@
+C:\Dev\C++Practice\STLexample\Debug\STLexample.exe
+C:\Dev\C++Practice\STLexample\Debug\STLexample.pdb
