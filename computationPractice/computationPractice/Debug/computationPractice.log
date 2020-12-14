@@ -1,0 +1,6 @@
+﻿  Main.cpp
+C:\Dev\C++Practice\computationPractice\computationPractice\src\Main.cpp(18,7): error C2672: 'std::sort': no matching overloaded function found
+C:\Dev\C++Practice\computationPractice\computationPractice\src\Main.cpp(18,17): error C2780: 'void std::sort(const _RanIt,const _RanIt)': expects 2 arguments - 1 provided
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\algorithm(7575): message : see declaration of 'std::sort'
+C:\Dev\C++Practice\computationPractice\computationPractice\src\Main.cpp(18,17): error C2780: 'void std::sort(const _RanIt,const _RanIt,_Pr)': expects 3 arguments - 1 provided
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\algorithm(7567): message : see declaration of 'std::sort'
