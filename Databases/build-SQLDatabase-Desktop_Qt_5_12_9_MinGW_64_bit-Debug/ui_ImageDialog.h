@@ -87,7 +87,7 @@ public:
         addTagButton->setText(QApplication::translate("ImageDialog", "Add Tag", nullptr));
         addImageButton->setText(QApplication::translate("ImageDialog", "Add Image", nullptr));
         imagesLabel->setText(QApplication::translate("ImageDialog", "Images:          #", nullptr));
-        imageLabel->setText(QApplication::translate("ImageDialog", "Label", nullptr));
+        imageLabel->setText(QString());
     } // retranslateUi
 
 };

@@ -1,23 +1,23 @@
 #ifndef IMAGECOLLECTION_H
 #define IMAGECOLLECTION_H
-
-#include "ImageDialog.h"
-class QImage;
+#include <QList>
+#include <QImage>
+#include <QStringList>
 
 class ImageCollection
 {
 public:
-    ImageCollection();
+  ImageCollection();
 
-    QImage getImage(int id);
-    QList<int> getIds(QStringList tags);
-    QStringList getTags();
+  QImage getImage( int id );
+  QList<int> getIds( QStringList tags );
+  QStringList getTags();
 
-    void addTag(int id, QString tag);
-    void addImage(QImage image, QStringList tags);
+  void addTag( int id, QString tag );
+  void addImage( QImage image, QStringList tags );
 
 private:
-    void populateDatabase();
+  void populateDatabase();
 };
 
 #endif // IMAGECOLLECTION_H

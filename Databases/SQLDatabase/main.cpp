@@ -1,13 +1,13 @@
-#include "ImageDialog.h"
-#include "ImageCollection.h"
 #include <QApplication>
 
-int main(int argc, char **argv)
+#include "ImageDialog.h"
+
+int main( int argc, char **argv )
 {
-    QApplication app(argc, argv);
-    ImageDialog iD;
-    iD.show();
+  QApplication app( argc, argv );
 
-    return app.exec();
+  ImageDialog dlg;
+  dlg.show();
+
+  return app.exec();
 }
-

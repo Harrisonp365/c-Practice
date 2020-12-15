@@ -1,42 +1,39 @@
 #ifndef IMAGEDIALOG_H
 #define IMAGEDIALOG_H
-
-#include <QDialog>
 #include <QList>
-
-namespace Ui{
-class ImageDialog;
-}
-
-class ImageCollection;
-class QStringList;
+#include <QStringList>
+#include <QDialog>
+#include "ui_ImageDialog.h"
+#include "ImageCollection.h"
 
 class ImageDialog : public QDialog
 {
-    Q_OBJECT
+  Q_OBJECT
+
 public:
-    ImageDialog();
+  ImageDialog();
 
 private slots:
-    void nextClicked();
-    void previousClicked();
-    void tagsChanged();
-    void addImageClicked();
-    void addTagClicked();
+  void nextClicked();
+  void previousClicked();
+  void tagsChanged();
+
+  void addImageClicked();
+  void addTagClicked();
 
 private:
-    QStringList selectedTags();
+  QStringList selectedTags();
 
-    void updateImages();
-    void updateTags();
-    void updateCurrentImage();
+  void updateImages();
+  void updateTags();
+  void updateCurrentImage();
 
-    Ui::ImageDialog *ui;
+  Ui::ImageDialog ui;
 
-    QList<int> imageIds;
-    int currentImage;
+  QList<int> imageIds;
+  int currentImage;
 
-    ImageCollection *images;
+  ImageCollection images;
 };
 
 
