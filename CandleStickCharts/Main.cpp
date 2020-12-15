@@ -59,7 +59,6 @@ int main(int argc, char *argv[])
     window.setCentralWidget(chartView);
     window.resize(800, 600);
     window.show();
-    //! [7]
 
     return a.exec();
 }

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "std_lib_facilities.h"
+#include <>
 using namespace std;
 /*
 int area(int length, int width)
@@ -46,7 +47,7 @@ int main()
 } */
 
 //The correct way to handle this error is the below method
-int area(int length, int width)
+/*int area(int length, int width)
 {
 	if (length <= 0 || width <= 0)error("non-positive area() argument");
 	return length * width;
@@ -71,4 +72,28 @@ int main()
 	int area2 = framedArea(1, z);
 	int area3 = framedArea(y, z);
 	double ratio = double(area1) / area3; 
+}
+*/
+
+//TRY CATCH BLOCKS
+
+int main()
+	
+try 
+{
+	//program here
+	return 0; // 0 indicates success
+}
+
+catch (exception& e)
+{
+	cerr << "error: " << e.what() << "\n";
+	keep_window_open();
+	return 1; // 1 indicates failure
+}
+catch (...)
+{
+	cerr << "Unknows exception";
+	keep_window_open();
+	return 2; // 2 indicates failure
 }
