@@ -239,6 +239,7 @@ Makefile: ..\CandleStickCharts\CandleStickCharts.pro ..\..\..\Qt\Qt5.12.9\5.12.9
 		..\..\..\Qt\Qt5.12.9\5.12.9\msvc2017\mkspecs\features\qt_config.prf \
 		..\..\..\Qt\Qt5.12.9\5.12.9\msvc2017\mkspecs\win32-msvc\qmake.conf \
 		..\..\..\Qt\Qt5.12.9\5.12.9\msvc2017\mkspecs\features\spec_post.prf \
+		.qmake.stash \
 		..\..\..\Qt\Qt5.12.9\5.12.9\msvc2017\mkspecs\features\exclusive_builds.prf \
 		..\..\..\Qt\Qt5.12.9\5.12.9\msvc2017\mkspecs\common\msvc-version.conf \
 		..\..\..\Qt\Qt5.12.9\5.12.9\msvc2017\mkspecs\features\toolchain.prf \
@@ -431,6 +432,7 @@ Makefile: ..\CandleStickCharts\CandleStickCharts.pro ..\..\..\Qt\Qt5.12.9\5.12.9
 ..\..\..\Qt\Qt5.12.9\5.12.9\msvc2017\mkspecs\features\qt_config.prf:
 ..\..\..\Qt\Qt5.12.9\5.12.9\msvc2017\mkspecs\win32-msvc\qmake.conf:
 ..\..\..\Qt\Qt5.12.9\5.12.9\msvc2017\mkspecs\features\spec_post.prf:
+.qmake.stash:
 ..\..\..\Qt\Qt5.12.9\5.12.9\msvc2017\mkspecs\features\exclusive_builds.prf:
 ..\..\..\Qt\Qt5.12.9\5.12.9\msvc2017\mkspecs\common\msvc-version.conf:
 ..\..\..\Qt\Qt5.12.9\5.12.9\msvc2017\mkspecs\features\toolchain.prf:

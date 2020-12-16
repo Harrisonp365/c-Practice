@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>resources/CandleStickData.txt</file>
+        <file alias="acme">acme_data.txt</file>
     </qresource>
 </RCC>

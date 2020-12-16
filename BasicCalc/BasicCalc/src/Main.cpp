@@ -5,18 +5,34 @@ using namespace std;
 
 int main()
 {
-	cout << "Please enter expression(we can handle + or -); ";
+	cout << "Please enter expression(we can handle +,-, *, /); \n";
+	cout << "add an x to end the expression(eg. 1+2*3x)"
 	int lval = 0;
 	int rval;
-	char opp;
-	int result;
-	cin >> lval >> opp >> rval;
 
-	if (opp == '+')
-		result = lval + rval;
-	else if (opp == '-')
-		result = lval - rval;
+	cin >> lval;
+	if (!cin) error("no first operand");
 
-	cout << "Result: " << result;
-	return 0;
+	for (char opp; cin >> opp;)
+	{
+		switch (opp)
+		{
+		case'+':
+			lval += rval;
+			break;
+		case '-';
+			lval -= rval;
+			break;
+		case '*';
+			lval *= rval;
+			break;
+		case '/';
+			lval /= rval;
+			break;
+		default:
+			cout << "Result: " << lval << "\n";
+			return 0;
+		}
+	}
+	error("bad expression");
 }
