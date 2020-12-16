@@ -1,2 +1,3 @@
 ﻿  main.cpp
+C:\Dev\C++Practice\hellowrld\hellowrld\src\main.cpp(51,23): warning C4018: '<': signed/unsigned mismatch
   hellowrld.vcxproj -> C:\Dev\C++Practice\hellowrld\Debug\hellowrld.exe
