@@ -1,2 +1,4 @@
 ﻿  Main.cpp
+C:\Dev\C++Practice\BasicCalc\BasicCalc\src\Main.cpp(96): warning C4715: 'Token_stream::get': not all control paths return a value
+C:\Dev\C++Practice\BasicCalc\BasicCalc\src\Main.cpp(120): warning C4715: 'primary': not all control paths return a value
   BasicCalc.vcxproj -> C:\Dev\C++Practice\BasicCalc\Debug\BasicCalc.exe

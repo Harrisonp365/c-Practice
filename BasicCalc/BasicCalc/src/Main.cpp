@@ -1,38 +1,182 @@
-#include <iostream>
-#include <cmath>
+
+#include "std_lib_facilities.h"
 
 using namespace std;
+class Token {
+public:
+    char kind;        // what kind of token
+    double value;     // for numbers: a value 
+    Token(char ch)    // make a Token from a char
+        :kind(ch), value(0) { }
+    Token(char ch, double val)     // make a Token from a char and a double
+        :kind(ch), value(val) { }
+};
+
+/*
+Token get_token()    // read a token from cin
+{
+    char ch;
+    cin >> ch;    // note that >> skips whitespace (space, newline, tab, etc.)
+    switch (ch) {
+ //not yet   case ';':    // for "print"
+ //not yet   case 'q':    // for "quit"
+    case '(': case ')': case '+': case '-': case '*': case '/':
+        return Token(ch);        // let each character represent itself
+    case '.':
+    case '0': case '1': case '2': case '3': case '4':
+    case '5': case '6': case '7': case '8': case '9':
+        {
+            cin.putback(ch);         // put digit back into the input stream
+            double val;
+            cin >> val;              // read a floating-point number
+            return Token('8',val);   // let '8' represent "a number"
+        }
+    default:
+        error("Bad token");
+    }
+}
+*/
+
+
+class Token_stream {
+public:
+    Token get();            // get a Token
+    void putback(Token t);  // put a Token back
+private:
+    bool full{ false };      // is there a Token in the buffer?
+    Token buffer = { '0' };           // where we store a 'putback' Token
+};
+
+void Token_stream::putback(Token t)
+{
+    if (full) error("putback() into a full buffer");
+    buffer = t;         // copy t to buffer
+    full = true;        // buffer is now full
+}
+
+Token Token_stream::get()
+{
+    if (full) {
+        full = false;
+        return buffer;
+    }
+    char ch;
+    cin >> ch;
+
+    switch (ch) {
+    case ';':       // for "print"
+    case 'q':       // for "quit"
+    case '(':
+    case ')':
+    case '+':
+    case '-':
+    case '*':
+    case '/':
+        return Token{ ch };   // let each character represent itself
+    case '.':
+    case '0':
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+    case '9':
+    {
+        cin.putback(ch);
+        double val;
+        cin >> val;
+        return Token{ '8', val };
+    }
+    default:
+        error("Bad Token");
+    }
+}
+
+
+Token_stream ts;      // provides get() and putback()
+
+double expression();   // read and evaluate a Expression
+
+double term();   // read and evaluate a Term
+double primary()     // read and evaluate a Primary
+{
+    Token t = ts.get();
+    switch (t.kind) {
+    case '(':    // handle '(' expression ')'
+    {
+        double d = expression();
+        t = ts.get();
+        if (t.kind != ')') error("')' expected");
+        return d;
+    }
+    case '8':            // we use '8' to represent a number
+        return t.value;  // return the number's value
+    default:
+        error("primary expected");
+    }
+}
 
 int main()
+try {
+    while (cin)
+        cout << expression() << '\n';
+}
+catch (exception& e) {
+    cerr << e.what() << endl;    
+    return 1;
+}
+catch (...) {
+    cerr << "exception \n";
+    return 2;
+}
+
+double expression()   // read and evaluate a Expression
 {
-	cout << "Please enter expression(we can handle +,-, *, /); \n";
-	cout << "add an x to end the expression(eg. 1+2*3x)"
-	int lval = 0;
-	int rval;
+     double left = term();
+     Token t = ts.get();
 
-	cin >> lval;
-	if (!cin) error("no first operand");
+     while (true) {
+         switch (t.kind) {
+         case '+':
+             left += term();
+             t = ts.get();
+             break;
+         case '-':
+             left -= term();
+             t = ts.get();
+             break;
+         default:
+             ts.putback(t);
+             return left;
+         }
+     } 
+}
 
-	for (char opp; cin >> opp;)
-	{
-		switch (opp)
-		{
-		case'+':
-			lval += rval;
-			break;
-		case '-';
-			lval -= rval;
-			break;
-		case '*';
-			lval *= rval;
-			break;
-		case '/';
-			lval /= rval;
-			break;
-		default:
-			cout << "Result: " << lval << "\n";
-			return 0;
-		}
-	}
-	error("bad expression");
+double term()   // read and evaluate a Term
+{
+      double left = primary();
+      Token t = ts.get();
+
+      while (true) {
+          switch (t.kind) {
+          case '*':
+              left *= term();
+              t = ts.get();
+              break;
+          case '/':
+          {
+              double d = primary();
+              if (d == 0) error("divide by zero");
+              left /= d;
+              t = ts.get();
+              break;
+          }
+          default:
+              ts.putback(t);
+              return left;
+          }
+      } 
 }
