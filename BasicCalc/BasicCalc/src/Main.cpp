@@ -120,17 +120,36 @@ double primary()     // read and evaluate a Primary
 }
 
 int main()
-try {
-    while (cin)
-        cout << expression() << '\n';
-}
-catch (exception& e) {
-    cerr << e.what() << endl;    
-    return 1;
-}
-catch (...) {
-    cerr << "exception \n";
-    return 2;
+{
+    try 
+    {
+        while (cin)
+        {
+            cout << "Too add multipule expressions please end them with';' eg. 2+5; 8*3; \n";
+            cout << ">";
+            Token t = ts.get();
+            while (t.kind == ';') t = ts.get();
+            if (t.kind == 'q')
+                return 0;
+
+            ts.putback(t);
+            cout << "=" << expression << "\n";
+        }
+        keep_window_open();
+        return 0;
+    }
+    
+    catch (exception& e) {
+        cerr << e.what() << "\n";
+        keep_window_open("~~");
+        return 1;
+    }
+    catch (...) {
+        cerr << "exception \n";
+        keep_window_open("~~");
+        return 2;
+    }
+   
 }
 
 double expression()   // read and evaluate a Expression
