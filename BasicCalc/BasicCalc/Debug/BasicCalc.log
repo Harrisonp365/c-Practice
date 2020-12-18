@@ -1,4 +1,10 @@
 ﻿  Main.cpp
-C:\Dev\C++Practice\BasicCalc\BasicCalc\src\Main.cpp(96): warning C4715: 'Token_stream::get': not all control paths return a value
-C:\Dev\C++Practice\BasicCalc\BasicCalc\src\Main.cpp(120): warning C4715: 'primary': not all control paths return a value
-  BasicCalc.vcxproj -> C:\Dev\C++Practice\BasicCalc\Debug\BasicCalc.exe
+  Token_stream.cpp
+C:\Dev\C++Practice\BasicCalc\BasicCalc\src\Token_stream.cpp(6,12): error C2374: 'number': redefinition; multiple initialization
+C:\Dev\C++Practice\BasicCalc\BasicCalc\src\Methods.h(5): message : see declaration of 'number'
+C:\Dev\C++Practice\BasicCalc\BasicCalc\src\Token_stream.cpp(7,12): error C2374: 'quit': redefinition; multiple initialization
+C:\Dev\C++Practice\BasicCalc\BasicCalc\src\Methods.h(6): message : see declaration of 'quit'
+C:\Dev\C++Practice\BasicCalc\BasicCalc\src\Token_stream.cpp(8,12): error C2374: 'print': redefinition; multiple initialization
+C:\Dev\C++Practice\BasicCalc\BasicCalc\src\Methods.h(7): message : see declaration of 'print'
+  Generating Code...
+C:\Dev\C++Practice\BasicCalc\BasicCalc\src\Methods.h(37): warning C4715: 'primary': not all control paths return a value

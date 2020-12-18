@@ -152,6 +152,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Methods.h" />
+    <ClCompile Include="src\Token_stream.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Token.h" />
+    <ClInclude Include="src\Token_stream.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
