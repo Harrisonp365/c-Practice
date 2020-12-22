@@ -1,4 +1,4 @@
-#include "Token.h"
+/*#include "Token.h"
 #include "Token_stream.h"
 #include "Methods.h"
 #include "std_lib_facilities.h"
@@ -71,5 +71,5 @@ Token Token_stream::get()
         error("Bad Token");
     }
 }
-
+*/
 

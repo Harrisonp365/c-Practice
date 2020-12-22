@@ -1,4 +1,4 @@
-#pragma once
+/* #pragma once
 #include "Token.h"
 
 //const char GLOBAL_CONST_VAR = 0xFF;
@@ -17,3 +17,4 @@ private:
     bool full{ false };      // is there a Token in the buffer?
     Token buffer = { 0 };         // where we store a 'putback' Token
 };
+*/

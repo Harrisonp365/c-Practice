@@ -1,4 +1,4 @@
-#include "Token.h"
+/*#include "Token.h"
 #include "Token_stream.h"
 #include "std_lib_facilities.h"
 
@@ -118,3 +118,4 @@ void calculate()
         cleanUpMess();
     }
 }
+*/
